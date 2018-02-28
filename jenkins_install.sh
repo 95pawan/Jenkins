@@ -6,7 +6,7 @@ sudo apt-get install -y default-jdk
 
 #Setting JAVA_HOME in environment
 echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre" >> /etc/profile
-sudo cd /opt
+cd /opt
 
 #Downloading Apache maven for building and packaging
 wget http://www-eu.apache.org/dist/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
@@ -18,11 +18,11 @@ echo "export MAVEN_HOME=/usr/local/apache-maven" >> /etc/profile
 echo "export PATH=${M2_HOME}/bin:${PATH}" >> /etc/profile
 
 # Installing tomcat
-sudo cd /
+cd /
 sudo groupadd tomcat
 sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
-sudo cd /tmp
-curl -O http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.27/bin/apache-tomcat-8.5.27.tar.gz
+cd /tmp
+curl -O http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.28/bin/apache-tomcat-8.5.28.tar.gz
 sudo mkdir /opt/tomcat
 sudo tar xzvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1
 cd /opt/tomcat
